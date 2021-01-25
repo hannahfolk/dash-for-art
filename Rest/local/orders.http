@@ -1,0 +1,21 @@
+# TODO: do queries correctly
+GET http://localhost:3001/api/admin/order-pull?inputDate=2020-08-14
+
+###
+POST http://localhost:3001/api/admin/commissions
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5MzQ2NDczMCwiZXhwIjoxNjAxMjQwNzMwfQ.81xd7yX-eJZW4Ns7SO35Xf2s1CQTznCWwyWUm95tIBY
+Content-Type: application/json
+
+{ 
+	"startDate": "2020-6-01", 
+	"endDate": "2020-6-30"
+}
+###
+POST http://localhost:3001/api/admin/commissions/by-artist
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5MzQ2NDczMCwiZXhwIjoxNjAxMjQwNzMwfQ.81xd7yX-eJZW4Ns7SO35Xf2s1CQTznCWwyWUm95tIBY
+Content-Type: application/json
+
+{ 
+	"startDate": "2020-6-01", 
+	"endDate": "2020-6-30"
+}

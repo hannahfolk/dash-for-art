@@ -1,0 +1,9 @@
+###
+# Sign in
+POST http://artists.teefury.com/api/user/signin
+Content-Type: application/json
+
+{ 
+	"contactEmail": "btran@teefury.com", 
+	"password": "123456"
+}

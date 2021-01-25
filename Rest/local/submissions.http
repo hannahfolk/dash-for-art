@@ -1,0 +1,52 @@
+### 
+# Submissions
+
+# Get submissions
+###
+GET http://localhost:3001/api/admin/submissions/NEW
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5Njk2Mzc2MCwiZXhwIjoxNjA0NzM5NzYwfQ.KCtLsKUl1YjiwmPwGgVUnivvPDUevSdWF1Tx-sg64oE
+###
+GET http://localhost:3001/api/admin/submissions/PENDING
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5Njk2Mzc2MCwiZXhwIjoxNjA0NzM5NzYwfQ.KCtLsKUl1YjiwmPwGgVUnivvPDUevSdWF1Tx-sg64oE
+###
+GET http://localhost:3001/api/admin/submissions/DECLINED
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5Njk2Mzc2MCwiZXhwIjoxNjA0NzM5NzYwfQ.KCtLsKUl1YjiwmPwGgVUnivvPDUevSdWF1Tx-sg64oE
+
+
+###
+GET http://localhost:3001/api/artist/submissions/NEW
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI4NiwiY29udGFjdEVtYWlsIjoiYnJ5YW44OXRyYW5AeWFob28uY29tIiwiaXNfYWRtaW4iOjAsImNsZWFuQXJ0aXN0TmFtZSI6InZwMDIxIiwiYXJ0aXN0TmFtZSI6InZwMDIxIiwiaWF0IjoxNTkxMDU1NTI0LCJleHAiOjE1OTg4MzE1MjR9.08rjcNThI2kj5P5e7Ze-LnqJNopi1lkgTM8lFTVgFGg
+###
+GET http://localhost:3001/api/artist/submissions/PENDING
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI4NiwiY29udGFjdEVtYWlsIjoiYnJ5YW44OXRyYW5AeWFob28uY29tIiwiaXNfYWRtaW4iOjAsImNsZWFuQXJ0aXN0TmFtZSI6InZwMDIxIiwiYXJ0aXN0TmFtZSI6InZwMDIxIiwiaWF0IjoxNTkxMDU1NTI0LCJleHAiOjE1OTg4MzE1MjR9.08rjcNThI2kj5P5e7Ze-LnqJNopi1lkgTM8lFTVgFGg
+
+###
+# Delete all declined submissions' art files
+DELETE http://localhost:3001/api/admin/submissions/declined-all-art-files
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5Njk2Mzc2MCwiZXhwIjoxNjA0NzM5NzYwfQ.KCtLsKUl1YjiwmPwGgVUnivvPDUevSdWF1Tx-sg64oE
+###
+# Delete declined art file by id
+DELETE http://localhost:3001/api/admin/submissions/declined-art-file/1
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5Njk2Mzc2MCwiZXhwIjoxNjA0NzM5NzYwfQ.KCtLsKUl1YjiwmPwGgVUnivvPDUevSdWF1Tx-sg64oE
+
+###
+# Change status to declined
+PUT http://localhost:3001/api/admin/submissions/status-to-declined
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5Njk2Mzc2MCwiZXhwIjoxNjA0NzM5NzYwfQ.KCtLsKUl1YjiwmPwGgVUnivvPDUevSdWF1Tx-sg64oE
+Content-Type: application/json
+
+{ 
+	"selectedSubmissionsArr": [{
+    "artFile": "/api/art-submissions/hannahfolk/1596959272817_1595252524352_infectiousdiseasecontrol.ai",
+    "artistEmail": "hfolk25@gmail.com",
+    "artistName": "hannahfolk",
+    "createdAt": "2020-08-09T00:47:52.000Z",
+    "description": "test",
+    "emailStatus": "Denied",
+    "id": 1,
+    "isSelected": true,
+    "previewArt": "/api/art-submissions/hannahfolk/1596959272818_3aee9b9a-a393-4cc4-9f57-6dcaa2f3a2f5.jpeg",
+    "status": "NEW",
+    "title": "testing"
+  }]
+}

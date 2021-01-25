@@ -1,0 +1,63 @@
+{
+  "name": "artist-dashboard",
+  "version": "1.5.3",
+  "description": "Teefury Artist Dashboard",
+  "main": "api/dist/index.js",
+  "scripts": {
+    "build": "babel ./api/src -d ./api/dist",
+    "client": "cd client && npm start",
+    "deploy-production": "cd network && pm2 deploy production",
+    "deploy-stage-setup": "cd network && pm2 deploy stage setup",
+    "deploy-stage": "pm2 deploy ./network/ecosystem.config.js stage",
+    "install": "cd client && npm install",
+    "prod-server": "NODE_ENV=production nodemon --ignore 'client/*' ./api/src/index.js --exec babel-node -e js",
+    "dev-server": "NODE_ENV=development nodemon --ignore 'client/*' ./api/src/index.js --exec babel-node -e js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || NODE_ENV=development npm run start:dev",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*' ./api/src/index.js --exec babel-node -e js \" \"npm run client\"",
+    "start:prod": "npm run build && cd client && npm run build && cd .. && NODE_ENV=production node ./api/dist/index.js",
+    "test-prod-locally": "NODE_ENV=production npm run start:prod",
+    "test": "mocha --require @babel/register --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btran-teefury/artist-dashboard-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btran-teefury/artist-dashboard-2/issues"
+  },
+  "homepage": "https://github.com/btran-teefury/artist-dashboard-2#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "concurrently": "^5.0.2",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcrypt": "^4.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "es6-promise": "^4.2.8",
+    "express": "^4.17.1",
+    "gm": "^1.23.1",
+    "helmet": "^3.21.2",
+    "if-env": "^1.0.4",
+    "isomorphic-fetch": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.2.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.6",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}

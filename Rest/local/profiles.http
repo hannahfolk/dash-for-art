@@ -1,0 +1,18 @@
+###
+GET http://localhost:3001/api/admin/artists-names
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5NDE0NTQ1MiwiZXhwIjoxNjAxOTIxNDUyfQ.54zpwzgJ2dRzdBbvu5faOmPfRUhxuOtBxu6cm8brJzQ
+Content-Type: application/json
+
+###
+POST http://localhost:3001/api/admin/artists-profiles
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5NDE0NTQ1MiwiZXhwIjoxNjAxOTIxNDUyfQ.54zpwzgJ2dRzdBbvu5faOmPfRUhxuOtBxu6cm8brJzQ
+Content-Type: application/json
+
+{ 
+	"artistName": "Stinkpad"
+}
+
+###
+DELETE http://localhost:3001/api/admin/artists-profiles/1732
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImNvbnRhY3RFbWFpbCI6Imhmb2xrQHRlZWZ1cnkuY29tIiwiaXNfYWRtaW4iOjEsImlhdCI6MTU5NDE0NTQ1MiwiZXhwIjoxNjAxOTIxNDUyfQ.54zpwzgJ2dRzdBbvu5faOmPfRUhxuOtBxu6cm8brJzQ
+Content-Type: application/json

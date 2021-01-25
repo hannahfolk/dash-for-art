@@ -1,0 +1,19 @@
+###
+# Create user
+POST http://localhost:3001/api/user/register
+Content-Type: application/json
+
+{ 
+	"contactEmail": "hfolk25@gmail.com", 
+	"password": "123456"
+}
+
+###
+# Sign in
+POST http://localhost:3001/api/user/signin
+Content-Type: application/json
+
+{ 
+	"contactEmail": "hfolk@teefury.com", 
+	"password": "123456"
+}
